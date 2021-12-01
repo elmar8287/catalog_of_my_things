@@ -28,26 +28,27 @@ class Main
     puts '10 - Exit'
   end
 
-  def select_option(user_choice)
+  # rubocop:disable Metrics
+  def select_option(_user_choice)
     case @choice
     when 1
-        list_books
+      list_books
     when 2
-        list_music_album
+      list_music_album
     when 3
-        list_games
+      list_games
     when 4
-        list_labels
+      list_labels
     when 5
-        list_genres
+      list_genres
     when 6
-        list_authors
+      list_authors
     when 7
-        add_book_menu
+      add_book_menu
     when 8
-        add_music_album_menu
+      add_music_album_menu
     when 9
-        add_game_menu
+      add_game_menu
     else
       if @choice != 7
         puts 'Invalid input, please try again'
@@ -55,7 +56,8 @@ class Main
       end
     end
   end
-
 end
+
+# rubocop:enable Metrics
 
 Main.new.run_app
