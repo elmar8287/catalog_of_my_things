@@ -10,7 +10,7 @@ class Main
   end
 
   def run_app
-    put 'Welcome to the catalog!'
+    puts 'Welcome to the catalog!'
     sleep 0.75
   end
 
