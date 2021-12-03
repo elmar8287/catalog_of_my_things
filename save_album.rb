@@ -1,6 +1,6 @@
 require_relative 'music_album'
 require_relative 'genre'
-module Save_album
+module SaveAlbum
   def read_json_books
     books_json = File.read('./local/books.json')
     data_books = JSON.parse(books_json)
