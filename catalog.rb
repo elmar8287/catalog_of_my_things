@@ -67,11 +67,16 @@ class Catalog
 
   def load_data
     @books = load_file('books.json')
+    @music_albums = load_file('music_albums.json')
+    @games = load_file('games.json')
 
     @genres = load_file('genres.json')
+    @authors = load_file('authors.json')
     @labels = load_file('labels.json')
 
     load_relationships(@books, 'books.json')
+    load_relationships(@games, 'games.json')
+    load_relationships(@music_albums, 'music_albums.json')
   end
 
   def load_file(file)
@@ -82,14 +87,21 @@ class Catalog
     end
   end
 
-  def load_relationships(games, sources)
-    return unless File.exist?('games.json')
+  def load_relationships(items, file_name)
+    return unless File.exist?(file_name)
 
-    games_json = JSON.parse(File.read('games.json'))
-    games_json.each_with_index do |game_json, index|
-      source = sources.detect { |source_json| source_json.id == game_json['source_id'] }
-      game = games[index]
-      game.source = source
+    items_json = JSON.parse(File.read(file_name))
+
+    items_json.each_with_index do |item_json, index|
+      genre = @genres.detect { |genre_json| genre_json.id == item_json['genre_id'] }
+      author = @authors.detect { |author_json| author_json.id == item_json['author_id'] }
+      label = @labels.detect { |label_json| label_json.id == item_json['label_id'] }
+
+      item = items[index]
+
+      item.genre = genre
+      item.author = author
+      item.label = label
     end
   end
 
