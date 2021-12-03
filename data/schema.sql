@@ -1,25 +1,25 @@
 CREATE TABLE Label(
-  id                INT GENERATED ALWAYS AS IDENTITY,
+  id                BIGSERIAL PRIMARY KEY,
   title             VARCHAR(100),
   color             VARCHAR(100),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Genre(
-  id                INT GENERATED ALWAYS AS IDENTITY,
+  id                BIGSERIAL PRIMARY KEY,
   name              VARCHAR(100),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Author(
-  id                 INT GENERATED ALWAYS AS IDENTITY,
+  id                 BIGSERIAL PRIMARY KEY,
   first_name         VARCHAR(100),
   last_name          VARCHAR(100),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE Book(
-  id                INT GENERATED ALWAYS AS IDENTITY,
+  id                BIGSERIAL PRIMARY KEY,
   label_id          INT,
   publish_date      DATE,
   archived          BOOLEAN,
@@ -30,7 +30,7 @@ CREATE TABLE Book(
 );
 
 CREATE TABLE MusicAlbum(
-  id                INT GENERATED ALWAYS AS IDENTITY,
+  id                BIGSERIAL PRIMARY KEY,
   genre_id          INT,
   publish_date      DATE,
   archived          BOOLEAN,
@@ -40,7 +40,7 @@ CREATE TABLE MusicAlbum(
 );
 
 CREATE TABLE Game(
-  id                INT GENERATED ALWAYS AS IDENTITY,
+  id                BIGSERIAL PRIMARY KEY,
   author_id         INT,
   publish_date      DATE,
   archived          BOOLEAN,
