@@ -1,12 +1,9 @@
+require_relative 'catalog'
+
 class Main
   def initialize
+    @catalog = Catalog.new
     @choice = 0
-    @books = []
-    @music_albums = []
-    @games = []
-    @genres = []
-    @authors = []
-    @labels = []
   end
 
   def run_app
@@ -32,17 +29,17 @@ class Main
   def select_option(_user_choice)
     case @choice
     when 1
-      list_books
+      @catalog.list_books
     when 2
-      list_music_album
+      @catalog.list_music_album
     when 3
-      list_games
+      @catalog.list_games
     when 4
-      list_labels
+      @catalog.list_labels
     when 5
-      list_genres
+      @catalog.list_genres
     when 6
-      list_authors
+      @catalog.list_authors
     when 7
       add_book_menu
     when 8
@@ -50,10 +47,8 @@ class Main
     when 9
       add_game_menu
     else
-      if @choice != 7
-        puts 'Invalid input, please try again'
-        puts
-      end
+      puts 'Invalid input, please try again'
+      show_options
     end
   end
 end
