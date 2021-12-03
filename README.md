@@ -27,6 +27,10 @@ And all of this will be built in a beautiful and well-organized way!
 - Twitter: [@Rustamjon7777](https://twitter.com/Rustamjon7777)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/rustamjon-tolipov/)
 
+👤 **Elmar Abdulkarimov**
+
+- GitHub: [@elmar8287](https://github.com/elmar8287)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
