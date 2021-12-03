@@ -26,4 +26,4 @@ module Save_album
       @albums << MusicAlbum.new(album['name'], date, album['on_spotify'])
     end
   end
-  
+end
