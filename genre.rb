@@ -1,5 +1,6 @@
 class Genre
-  attr_accessor :archived, :items, :name
+  attr_accessor :name
+  attr_reader :items
 
   def initialize(name)
     @id = Random.rand(1..1000)
@@ -9,6 +10,20 @@ class Genre
 
   def add_item(item)
     @items.push(item)
-    item.add_genre(self)
+    item.genre(self)
+  end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'id' => @id,
+      'name' => @name
+    }.to_json(*args)
+  end
+
+  def self.json_create(object)
+    genre = new(object['name'])
+    genre.id = object['id']
+    genre
   end
 end
