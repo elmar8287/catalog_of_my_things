@@ -4,9 +4,9 @@ require_relative 'create_handlers'
 require_relative 'catalog'
 
 class Main
-  include AddHolder
-  include PromptHolder
-  include CreateHolder
+  include AddHandler
+  include PromptHandler
+  include CreatHandler
 
   def initialize
     @catalog = Catalog.new
