@@ -2,6 +2,11 @@
 
 "Catalog of my things" is a console app that allows users to manage collections of the things they own. It keeps a record of different type of things the users won: books, music albums, movies, and games. The data is store in JSON files.
 
+## Getting Started
+- git clone https://github.com/Rustamxon7/OOP-school-library/
+- cd OOP-School-Library-App
+- Run the project by running `ruby main.rb` on the command line.
+- To run the `tests` make sure you install rspec gem by running `gem install rspec` on the command line then run `rspec spec` on the command line to see the test passing
 ## Presentation Video
 
 [Presentation Video](https://drive.google.com/file/d/19yupIeQK05b-u-N39FTJqxUMxyFRHIwl/view?usp=sharing)
