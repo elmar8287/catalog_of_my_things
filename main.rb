@@ -10,7 +10,6 @@ class Main
 
   def initialize
     @catalog = Catalog.new
-    @choice = 0
   end
 
   def start_app
@@ -25,25 +24,36 @@ class Main
 
       handle_choice(choice)
     end
+
+    @catalog.save_data
+    puts "\nThank you for using the catalog!\n"
   end
 
-  def show_options
-    puts 'Please choose an option by entering a number:'
-    puts '1 - List all books'
-    puts '2 - List all music albums'
-    puts '3 - List all games'
-    puts '4 - List all labels'
-    puts '5 - List all genres'
-    puts '6 - List all authors'
-    puts '7 - Add a book'
-    puts '8 - Add a music album'
-    puts '9 - Add a game'
-    puts '10 - Exit'
+  def show_menu
+    puts 'Enter your option number'
+    puts [
+      '1 - List all books',
+      '2 - List all music albums',
+      '3 - List all games',
+      '4 - List all labels',
+      '5 - List all genres',
+      '6 - List all authors',
+      '7 - Add a book',
+      '8 - Add a music album',
+      '9 - Add a game',
+      '10 - Exit'
+    ]
   end
 
-  # rubocop:disable Metrics
-  def select_option(_user_choice)
-    case @choice
+  def prompt_choice
+    print "\nPlease choose an option by entering a number from 1 to 10: "
+    gets.chomp.to_i
+  end
+
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/CyclomaticComplexity
+  def handle_choice(choice)
+    case choice
     when 1
       @catalog.list_books
     when 2
@@ -63,12 +73,11 @@ class Main
     when 9
       add_game_menu
     else
-      puts 'Invalid input, please try again'
-      show_options
+      puts "\nERROR: Invalid option. See available options below.\n"
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics/MethodLength
 end
-
-# rubocop:enable Metrics
 
 Main.new.start_app
