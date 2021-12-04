@@ -7,6 +7,9 @@
 - cd OOP-School-Library-App
 - Run the project by running `ruby main.rb` on the command line.
 - To run the `tests` make sure you install rspec gem by running `gem install rspec` on the command line then run `rspec spec` on the command line to see the test passing
+## Presentation Video
+
+[Presentation Video](https://drive.google.com/file/d/19yupIeQK05b-u-N39FTJqxUMxyFRHIwl/view?usp=sharing)
 
 ## Built With
 - Ruby
