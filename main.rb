@@ -4,18 +4,27 @@ require_relative 'create_handlers'
 require_relative 'catalog'
 
 class Main
-  include AddHandler
-  include PromptHandler
-  include CreatHandler
+  include AddHandlers
+  include PromptHandlers
+  include CreateHandlers
 
   def initialize
     @catalog = Catalog.new
     @choice = 0
   end
 
-  def run_app
-    puts 'Welcome to the catalog!'
-    sleep 0.75
+  def start_app
+    puts "Welcome to the catalog!\n"
+
+    @catalog.load_data
+
+    loop do
+      show_menu
+      choice = prompt_choice
+      break if choice == 10
+
+      handle_choice(choice)
+    end
   end
 
   def show_options
@@ -62,4 +71,4 @@ end
 
 # rubocop:enable Metrics
 
-Main.new.run_app
+Main.new.start_app
