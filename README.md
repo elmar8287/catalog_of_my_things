@@ -31,6 +31,11 @@ And all of this will be built in a beautiful and well-organized way!
 
 - GitHub: [@elmar8287](https://github.com/elmar8287)
 
+👤 **Olipliche Mavoungou Paka**
+- GitHub: [OLIPLICHE](https://github.com/OLIPLICHE)
+- LinkedIn: [olipliche](https://www.linkedin.com/in/olipliche/)
+- Twitter: [@olipliche1](https://twitter.com/olipliche1)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
