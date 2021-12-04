@@ -2,6 +2,10 @@
 
 "Catalog of my things" is a console app that allows users to manage collections of the things they own. It keeps a record of different type of things the users won: books, music albums, movies, and games. The data is store in JSON files.
 
+## Presentation Video
+
+![](https://drive.google.com/file/d/19yupIeQK05b-u-N39FTJqxUMxyFRHIwl/view?usp=sharing)
+
 ## Built With
 - Ruby
 - SQL
