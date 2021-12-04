@@ -21,12 +21,12 @@ class Catalog
     @books.push(book)
   end
 
-  def add_game(game)
-    @games.push(game)
-  end
-
   def add_music_album(music_album)
     @music_albums.push(music_album)
+  end
+
+  def add_game(game)
+    @games.push(game)
   end
 
   def add_genre(genre)
@@ -45,12 +45,12 @@ class Catalog
     @books.each { |book| puts book }
   end
 
-  def list_games
-    @games.each { |game| puts game }
-  end
-
   def list_music_album
     @music_albums.each { |ms_album| puts ms_album }
+  end
+
+  def list_games
+    @games.each { |game| puts game }
   end
 
   def list_genres
@@ -114,8 +114,7 @@ class Catalog
     save_file(@games, 'games.json')
   end
 
-  def save_files
-    File.write('games.json', JSON.generate(@games)) if @games.any?
-    File.write('sources.json', JSON.generate(@sources)) if @sources.any?
+  def save_file(data, file_name)
+    File.write(file_name, JSON.generate(data)) if data.any?
   end
 end
