@@ -4,7 +4,7 @@
 
 ## Presentation Video
 
-![](https://drive.google.com/file/d/19yupIeQK05b-u-N39FTJqxUMxyFRHIwl/view?usp=sharing)
+![Presentation Video](https://drive.google.com/file/d/19yupIeQK05b-u-N39FTJqxUMxyFRHIwl/view?usp=sharing)
 
 ## Built With
 - Ruby
