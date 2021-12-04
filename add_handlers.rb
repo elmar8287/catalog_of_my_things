@@ -6,7 +6,7 @@ require_relative 'label'
 require_relative 'author'
 require_relative 'genre'
 
-module Addholder
+module AddHandlers
   def add_book_menu
     book_details = prompt_book_details
     book = create_book(book_details)

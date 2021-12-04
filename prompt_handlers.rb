@@ -1,4 +1,4 @@
-module PromptHolder
+module PromptHandlers
   def prompt_option(text, options)
     puts "\n***SELECT***\n\n"
 
