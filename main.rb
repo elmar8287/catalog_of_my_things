@@ -30,7 +30,7 @@ class Main
   end
 
   def show_menu
-    puts 'Enter your option number'
+    puts 'Please choose an option by entering a number:'
     puts [
       '1 - List all books',
       '2 - List all music albums',

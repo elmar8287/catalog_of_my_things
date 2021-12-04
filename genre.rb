@@ -1,16 +1,20 @@
 class Genre
-  attr_accessor :name
+  attr_accessor :name, :id
   attr_reader :items
 
   def initialize(name)
-    @id = Random.rand(1..1000)
+    @id = Random.rand(1..10_000)
     @name = name
     @items = []
   end
 
   def add_item(item)
     @items.push(item)
-    item.genre(self)
+    item.genre = self
+  end
+
+  def to_s
+    "Genre - Name: #{@name}"
   end
 
   def to_json(*args)

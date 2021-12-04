@@ -1,27 +1,28 @@
 require 'date'
 
 class Item
-  attr_reader :archived, :items
+  attr_accessor :id
+  attr_reader :archived, :genre, :label, :author
 
-  def initialize(publish_date, genre, author, source)
+  def initialize(publish_date)
     @id = Random.rand(0..10_000)
     @publish_date = publish_date
-    @genre = genre
-    @author = author
-    @source = source
     @archived = false
   end
 
   def genre=(genre)
-    genre.items.push(self)
+    @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
   end
 
   def author=(author)
-    author.items.push(self)
+    @author = author
+    author.items.push(self) unless author.items.include?(self)
   end
 
-  def source(source)
-    source.items.push(self) unless source.items.include?(self)
+  def label=(label)
+    @label = label
+    label.items.push(self) unless label.items.include?(self)
   end
 
   def move_to_archive
@@ -29,7 +30,7 @@ class Item
   end
 
   def to_s
-    "Publish date: #{@publish_date}, Archived: #{@archived}\n#{@label}"
+    "Publish date: #{@publish_date}, Archived: #{@archived}\n#{@genre}\n#{@author}\n#{@label}"
   end
 
   def to_json(_args)
@@ -37,7 +38,9 @@ class Item
       'id' => @id,
       'publish_date' => @publish_date,
       'archived' => @archived,
-      'source_id' => @source.id
+      'genre_id' => @genre.id,
+      'author_id' => @author.id,
+      'label_id' => @label.id
     }
   end
 
